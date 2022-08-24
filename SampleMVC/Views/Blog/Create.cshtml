@@ -1,0 +1,23 @@
+﻿@model Post
+
+<h1>Create Blog Post</h1>
+
+<fieldset>
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.LabelFor(x => x.Title)
+            @Html.EditorFor(x => x.Title)
+        </p>
+
+        <p>
+            @Html.LabelFor(x => x.Content)
+            @Html.EditorFor(x => x.Content)
+        </p>
+
+        <button type="submit">Create Post</button>
+
+    }
+
+</fieldset>

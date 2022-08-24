@@ -1,0 +1,15 @@
+﻿@model Post
+
+<article>
+
+    <h1>@Model.Title</h1>
+
+    <div>
+        Posted: <span>@Model.Posted.ToString("d")</span> by <span>@Model.Author</span>
+    </div>
+
+    <div>
+        @Model.Content
+    </div>
+
+</article>

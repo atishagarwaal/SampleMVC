@@ -1,0 +1,25 @@
+﻿@model Post[]
+
+@foreach(var post in Model)
+{ 
+    <article>
+
+        <h1>
+            @Html.ActionLink(@post.Title, "Post", "Blog", new
+       {
+           Year = @post.Posted.Year,
+           Month = @post.Posted.Month,
+           Title = @post.Title
+       })
+        </h1>
+
+        <div>
+            Posted: <span>@post.Posted.ToString("d")</span> by <span>@post.Author</span> 
+        </div>
+
+        <div>
+            @post.Content
+        </div>
+
+    </article>
+}
