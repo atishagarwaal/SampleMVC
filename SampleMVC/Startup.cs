@@ -25,10 +25,9 @@ namespace SampleMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //register identity database
+            // Use in-memory database for BlogDataContext
             services.AddDbContext<BlogDataContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("BlogDataContext")));
+                options.UseInMemoryDatabase("BlogDataContext"));
 
             services.AddControllersWithViews();
             services.AddRazorPages();
